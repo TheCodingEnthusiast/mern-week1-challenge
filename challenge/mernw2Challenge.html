@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <style>
+        #Top{text-align: center;}
+        #water{
+        top:70%;
+        left:5%;
+        width:100px;
+        height:40px;
+        position: absolute;
+        z-index: 2;
+        background-color: rgb(189, 189, 189);
+        }
+
+        #fire{
+        top:70%;
+        left:15%;
+        width:100px;
+        height:40px;
+        position: absolute;
+        z-index: 2;
+        background-color: rgb(189, 189, 189);
+        }
+
+        #tree{
+        top:70%;
+        left:25%;
+        width:100px;
+        height:40px;
+        position: absolute;
+        z-index: 2;
+        background-color: rgb(189, 189, 189);
+        }
+
+        #play{
+        top:80%;
+        left:37.5%;
+        width:25vw;
+        height:60px;
+        position: absolute;
+        z-index: 2;
+        background-color: rgb(189, 189, 189);
+        }
+
+        img {
+        border-radius: 50%;
+        }
+        
+    
+        #stats{
+            margin-top: 8%;
+            text-align: center;
+            font-size: 0.6cm;
+        }
+
+        #ph1{
+            height: 20%;
+            width: 20%;
+            margin-top: -14%;
+           margin-left: 10%;
+        }
+        #ph2{
+            height: 20%;
+            width: 20%;
+            margin-top: -22.5%;
+           margin-left: 70%;
+
+        }
+    </style>
+    <title>Title</title>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 id="Top">Water,Fire,Tree</h1>  
+    <div id="stats"><b><p id="p1">--- WON</p> <br><p id="p2"> ---LOST</p></b></div>
+    
+    <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="Avatar" id="ph1">
+    <img src="https://esportsone.com/wp-content/uploads/2019/08/one_bot_icon.png" alt="Bot" id="ph2">
+     <button type="button" class="btn btn-light" id="water" disabled>Water</button>
+     <button type="button" class="btn btn-light" id="fire" disabled>Fire</button>
+     <button type="button" class="btn btn-light" id="tree" disabled>Tree</button>
+     <button type="button" class="btn btn-light" id="play" >Play</button>
+        
+    
+    <script type="text/javascript">
+       
+        function user(){
+                document.getElementById("p1").innerHTML="USER WON";
+                document.getElementById("p2").innerHTML="BOT LOST";
+                }
+                function Bot(){
+                document.getElementById("p1").innerHTML="BOT WON";
+                document.getElementById("p2").innerHTML="USER LOST";
+                }
+                function tie(){
+                document.getElementById("p1").innerHTML="No one WON";
+                document.getElementById("p2").innerHTML="No one LOST";
+                }
+        /*Water=0;Fire=1;Tree=2;*/
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+                                }
+        
+        document.getElementById("play").onclick=function(){
+            document.getElementById("water").disabled = false;
+            document.getElementById("fire").disabled = false;
+            document.getElementById("tree").disabled = false;
+
+
+        }
+        /*Water=0;Fire=1;Tree=2;*/
+        document.getElementById("water").onclick=function(){
+            if(play=1){
+                let bot=(getRandomInt(3));
+                if(bot==1){console.log("You Won"); user();}
+                if(bot==2){console.log("You Loose");BOT()}
+                if(bot==0){console.log("Its a tie");tie();}
+            }
+        }
+        /*Water=0;Fire=1;Tree=2;*/
+        document.getElementById("fire").onclick=function(){
+            if(play=1){
+                let bot=(getRandomInt(3));
+                if(bot==2){console.log("You Won"); user();}
+                if(bot==0){console.log("You Loose");BOT()}
+                if(bot==1){console.log("Its a tie");tie();}
+            }
+        }
+
+        document.getElementById("tree").onclick=function(){
+            if(play=1){
+                let bot=(getRandomInt(3));
+                if(bot==0){console.log("You Won"); user();}
+                if(bot==1){console.log("You Loose");BOT()}
+                if(bot==2){console.log("Its a tie");tie();}
+            }
+        }
+    </script>
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
